@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Авторизация</title>
+</head>
+<body bgcolor="#98FB98">
+<center>   
+<h2>Выбор почты и авторизация</h2>
+<br/>
+<h3>{{success}}</h3>
+
+<form name='1' method="POST"> {% csrf_token %}
+<p><b>Выберите почту:</b><Br>
+   <input type="radio" name="choice_mail" value="smtp.gmail.com" checked>gmail.com<Br>
+   <input type="radio" name="choice_mail" value="smtp.mail.ru"> mail.ru<Br>
+   <input type="radio" name="choice_mail" value="smtp.yandex.ru">yandex.ru<Br>
+  </p>
+		<label>
+        Логин:<br />
+        <input name="login" autocomplete="off" value="" />
+      </label><br />
+	  
+	  	<label>
+        Пароль:<br />
+        <input type='password' name="password" autocomplete="off" value="" />
+      </label><br />
+	  
+	  <input type="submit" name='choice' value="Сохранить" />
+	   </form>	   
+	   
+	   <form method="POST">{% csrf_token %}
+	  <input type="submit" name='choice' value="Удалить введенные данные" />
+	   </form>	  
+	   
+	   <br />
+	   	<form action="http://127.0.0.1:8000/clients_window"
+      method="GET">
+	  <input type="submit" value="Назад" />
+	   </form>
+	
+	 </center> 
+	</body>
+</html>

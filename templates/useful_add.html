@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Добавление сайта</title>
+</head>
+
+<body bgcolor="#98FB98">
+<center>   
+
+<h2>Добавление сайта</h2>
+<br/>
+<h3>{{success}}</h3>
+
+<form method="POST"> {% csrf_token %}
+
+<label>
+        Название сайта:<br />
+        <input name="site_name" value="" autocomplete="off"/>
+      </label><br />
+	  
+	  	<label>
+        Описание:<br />
+        <input name="description" value="" autocomplete="off"/>
+      </label><br />
+	  
+	  <label>
+        Ссылка:<br />
+        <input name="link" autocomplete="off"
+          value="" />
+      </label><br />
+	  
+	  <input type="submit" value="Отправить" />
+	   </form>
+	   
+	   
+	   <br />
+	   	<form action="http://127.0.0.1:8000/useful_data"
+      method="GET">
+
+	  <input type="submit" value="Назад" />
+	   </form>
+	
+	 </center> 
+	</body>
+</html>

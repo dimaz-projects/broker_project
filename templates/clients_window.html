@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<meta charset = "utf-8">
+<title>Окно с клиентами</title>
+</head>
+
+<body bgcolor="#98FB98">
+<center>   
+   <h2>Операции с клиентами</h2>
+	   
+	 <form action="http://127.0.0.1:8000/clients_window/clients_add"
+      method="GET">
+	  <input type="submit" value="Добавить клиента" />
+	   </form>  
+	   
+	 <form action="http://127.0.0.1:8000/clients_window/clients_delete"
+      method="GET">
+	  <input type="submit" value="Изменить(удалить) клиента" />
+	   </form>
+	   
+		<form action="http://127.0.0.1:8000/clients_window/clients_view"
+      method="GET">
+	  <input type="submit" value="Просмотр списка" />
+	   </form>
+	   
+	   
+		<form action="http://127.0.0.1:8000/clients_window/autoriz"
+      method="GET">
+	  <input type="submit" value="Авторизация в эл. почте" />
+	   </form>
+	   
+	   <br />
+	   	<form action="http://127.0.0.1:8000"
+      method="GET">
+
+	  <input type="submit" value="Назад" />
+	   </center> 
+	</body>
+</html>

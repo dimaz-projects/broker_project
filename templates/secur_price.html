@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Цены акций</title>
+</head>
+
+<body bgcolor="#98FB98">
+<center>
+<table onload='f1()' border="1" width="12" cellpadding="2"=>
+ <tr>
+<th>Инструмент</th>
+<th>Цена посл.сделки</th>
+<th>% Изм. цены</th>
+<th>Открытие</th>
+<th>Макс. цена</th>
+<th>Мин. цена</th>
+<th>Закрытие</th> 
+<th>Объем, шт.</th> 
+<th>Время обновл.</th> 
+</tr>
+ 
+ {% for i in prices_set %} 
+{% autoescape off %} 
+
+{{i}}
+
+{% endautoescape %} 
+{% endfor %} 
+
+<script type="text/javascript">
+function f1() {
+
+$('td').each(function(){
+    var x = $(this).text();
+    if (x > 0) $(this).css({color: 'red'});
+    });}
+</script>
+
+</table>
+</center>
+</body>
+</html>

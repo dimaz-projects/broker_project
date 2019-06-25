@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Выбор ценной бумаги</title>
+</head>
+
+<body bgcolor="#98FB98">
+<center>
+<form action='http://127.0.0.1:8000/analyse/tech_analyse/' target="_blank"
+						method="POST"> {% csrf_token %}  
+
+ <h3>Выберите акцию для тех.анализа</h3> <br />
+
+ Будет осуществлен переход на сайт<br />
+ брокерcкой компании finam.
+ <br /><br />
+ <select name = "secur_name">
+  <option>Сбербанк</option>
+  <option>Роснефть</option>
+  <option>Газпром</option>
+  <option>Лукойл</option>
+  <option>Аэрофлот</option>
+	</select> <br /> <br /><br />
+<input type="submit" value="Отправить" />
+</form>
+{% if site_link != '' %}      
+<script type="text/javascript"> 
+document.location.href ="{{site_link}}";</script> 
+{% endif %}	
+	  </center>
+</body>
+	  </html>

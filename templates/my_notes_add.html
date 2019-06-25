@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Добавление заметки</title>
+</head>
+<body bgcolor="#98FB98">
+<center>   
+<h2>Добавление заметки</h2>
+<br/>
+<h3>{{success}}</h3>
+
+<form method="POST"> {% csrf_token %}
+
+<label>
+        Тема замеки:<br />
+        <input name="note_topic" value="" autocomplete="off" />
+      </label><br />
+	  
+	  	<label>
+        Описание:<br />
+        <input name="description" value="" autocomplete="off"/>
+      </label><br />
+	  
+	  <input type="submit" value="Отправить" />
+	   </form>
+	   
+	   
+	   <br />
+	   	<form action="http://127.0.0.1:8000/analyse/my_notes"
+      method="GET">
+	  <input type="submit" value="Назад" />
+	   </form>
+	
+	 </center> 
+	</body>
+</html>

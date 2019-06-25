@@ -1,0 +1,36 @@
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Выбор действия</title>
+ </head>
+ <body bgcolor="#98FB98">
+ <center>
+<h2>Выбор клиента и действия</h2>
+<br/>
+<h3>{{success}}</h3>
+ 
+  <form method="POST">{% csrf_token %}
+	<p><select name="choice_client">
+	<option>Выберите клиента</option>
+	{% for i in clients_list %}
+   <option value={{i.id}}>{{i.name}}(id= {{i.id}})</option>
+   <br/>
+	{% endfor %}
+  </select>
+<p><b>Выберите команду:</b><Br>
+   <input type="radio" name="choice_action" value="modify" checked> Изменить<Br>
+   <input type="radio" name="choice_action" value="delete"> Удалить<Br>
+  </p>
+  
+  <input type="submit" name="execute" value="Выполнить"></p>
+  </form> 
+
+  <br />
+	   	<form action="http://127.0.0.1:8000/clients_window"
+      method="GET">
+
+	  <input type="submit" value="Назад" />
+	   </form>
+ </center>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Комментарии экспертов</title>
+</head>
+<body bgcolor="#98FB98">
+<table class="news-list" width="70%"><tbody class="news">
+{% for i in comments_set %} 
+{% autoescape off %} 
+<br /><br />
+<h3>
+<a href={{ i.link }}>
+  {{ i.title }}
+ </a>
+</h3>
+{{ i.description }}
+<h4>Дата: {{i.published}}</h4>
+{% endautoescape %} 
+{% endfor %} 
+
+</tbody></table>
+</body></html>

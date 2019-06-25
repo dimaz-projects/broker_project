@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Новости компаний</title>
+</head>
+
+<body bgcolor="#98FB98">
+<table class="news-list"><tbody class="news">
+
+{% for i in news_set %} 
+{% autoescape off %} 
+<br /><br />
+<tr>
+<h3><a href={{ i.link }}>
+  {{ i.title }}
+ </a></h3>
+ 
+{{ i.description }}
+<h4>Дата: {{i.published}}</h4>
+</tr>
+{% endautoescape %} 
+{% endfor %} 
+
+<Br>
+<h4>Источник: finam.ru</h4>
+
+</tbody></table>
+</body>
+</html>

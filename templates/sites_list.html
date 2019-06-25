@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Список сайтов</title>
+</head>
+
+<body bgcolor="#98FB98">
+<center>
+<table border="1" width="12" cellpadding="2"=>
+ <p>{{success}}</p>
+ 
+<h2>Список сайтов</h2>
+ <tr>
+<th>№</th>
+<th>Название компании</th>
+<th>Ссылка на сайт</th>
+<th>Ссылка на раздел с отчетностью</th>
+<th>id сайта</th>
+</tr>
+{% for i in sites_list %} 
+<tr>
+<td align = center>{{forloop.counter}}</td>
+<td align = center nowrap>{{i.company_name}}</td>
+<td align = center nowrap ><a href = "{{i.link}}" target="_blank">{{i.link}}</a> </td>
+<td ><a href = "{{i.report_link}}" target="_blank">{{i.report_link}}</a> </td>
+<td align = center>{{i.id}}</td>
+</tr>
+{% endfor %} 
+</table>
+
+<h3>Изменение сайта</h3>
+
+  <form method="POST">{% csrf_token %}
+	<p><select name="choice_site">
+	<option>Выберите сайт</option>
+	{% for i in sites_list %}
+   <option value={{i.id}}>{{i.company_name}}(id= {{i.id}})</option>
+   <br/>
+	{% endfor %}
+  </select>
+<p><b>Выберите команду:</b><Br>
+   <input type="radio" name="choice_action" value="modify" checked> Изменить<Br>
+   <input type="radio" name="choice_action" value="delete"> Удалить
+  </p>
+  
+  <input type="submit" name="execute" value="Выполнить"></p>
+  </form> 
+
+	<form action="http://127.0.0.1:8000/analyse/sites_list/sites_add"
+      method="GET">
+	  <input type="submit" value="Добавить сайт" />
+	   </form>
+
+	<form action="http://127.0.0.1:8000/analyse"
+      method="GET">
+	  <input type="submit" value="Назад" />
+	   </form>
+	{% if success != "" %}   
+	<script type="text/javascript"> 
+document.location.href ="http://127.0.0.1:8000/sites_list";</script>    
+	   {% endif %}
+</center>
+</body>
+<html>

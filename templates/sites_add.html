@@ -1,0 +1,42 @@
+<html>
+<head> 
+<base autocomplete="off">
+<meta charset = "utf-8">
+<title>Добавление сайтов</title>
+</head>
+<body bgcolor="#98FB98">
+<center>
+<h2>Добавление сайта</h2>
+<br/>
+<h3>{{success}}</h3>
+
+<form method="POST"> {% csrf_token %}
+
+<label>
+        Название компании:<br />
+        <input name="company_name" value="" autocomplete="off" />
+      </label><br />
+	  
+	  	<label>
+        Ссылка на официальный сайт:<br />
+        <input name="link" value="" autocomplete="off"/>
+      </label><br />
+	  
+	  <label>
+        Раздел с отчетностью:<br />
+        <input name="report_link" autocomplete="off" value="" />
+      </label><br />
+	  
+	  <input type="submit" value="Отправить" />
+	   </form>
+	  
+	   
+	   <br />
+	   	<form action="http://127.0.0.1:8000/analyse/sites_list"
+      method="GET">
+	  <input type="submit" value="Назад" />
+	   </form>
+	
+	 </center> 
+	</body>
+</html>
